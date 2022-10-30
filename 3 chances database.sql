@@ -1,32 +1,30 @@
-create DATABASE Jogo;
-USE Jogo;
+create DATABASE Tres_chances;
+USE Tres_chances;
 
 CREATE TABLE Jogador(
-    Acertos INT NOT NULL AUTO_INCREMENT,
-    Nome VARCHAR(255),
-    Tempo_Gasto VARCHAR(11),
+    ID INT NOT NULL AUTO_INCREMENT,
+    Nome INT NOT NULL,
+    Acertos INT NOT NULL,
+    Tempo_Gasto INT NOT NULL,
     PRIMARY KEY (ID)
 );
 
-CREATE TABLE Pontuacao(
+CREATE TABLE Informacoes(
     ID INT NOT NULL AUTO_INCREMENT,
-    Jogador VARCHAR(255),
-    Acertos VARCHAR(11),
-    Tempo_Gasto VARCHAR(11),
-    PRIMARY KEY (ID),
-    FOREIGN KEY (AcertosID) REFERENCES Acertos(ID)
-);
-
-CREATE TABLE Informacaos(
-    ID INT NOT NULL AUTO_INCREMENT,
-    Local VARCHAR(255),
     Data DATETIME,
     Comida VARCHAR(255),
     Cor VARCHAR(255),
     Lugar VARCHAR(255),
-    jogadorID INT NOT NULL,
-    IDPontuação VARCHAR(2) NOT NULL,
-    PRIMARY KEY (ID),
-    FOREIGN KEY (JogadorID) REFERENCES Jogadador(ID),
-    FOREIGN KEY(IDProduto) REFERENCES Produto(ID)
+    PRIMARY KEY (ID)
 );
+
+INSERT INTO Jogador (ID, Nome, Acertos, Tempo_Gasto) VALUES
+(default, 300000, 'Lucas', '15', '40s'),
+(default, 20000, 'Luiz', '21', '30s'),
+(default, 200000, 'Thiago', '20', '20s');
+
+INSERT INTO Informacoes (ID, Comida, Cor, Lugar) VALUES
+(default, 'BANANA', 'AZUL', 'BRASIL'),
+(default, 'MACARAO', 'VERMELHO', 'MEXICO'),
+(default, 'ARROZ', 'ROXO', 'MINAS'),
+(default, 'LIMAO', 'LARANJA', 'GOIAS');
