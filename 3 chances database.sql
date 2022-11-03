@@ -1,30 +1,36 @@
-create DATABASE Tres_chances;
-USE Tres_chances;
+-- derruba banco de dados.
+drop DATABASE tres_chances;
+-- cria banco de dados.
+CREATE DATABASE tres_chances;
+USE tres_chances;
 
+-- primeira tabela.
 CREATE TABLE Jogador(
-    ID INT NOT NULL AUTO_INCREMENT,
-    Nome INT NOT NULL,
-    Acertos INT NOT NULL,
-    Tempo_Gasto INT NOT NULL,
-    PRIMARY KEY (ID)
+id int not null AUTO_INCREMENT primary key,  
+nome varchar(255) not null,
+pontos longtext not null
 );
 
-CREATE TABLE Informacoes(
-    ID INT NOT NULL AUTO_INCREMENT,
-    Data DATETIME,
-    Comida VARCHAR(255),
-    Cor VARCHAR(255),
-    Lugar VARCHAR(255),
-    PRIMARY KEY (ID)
+-- segunda tabela.
+CREATE TABLE Dados(
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Jogador int not null,
+    Comida longtext not null,
+    Cor VARCHAR(255) not null,
+    Lugar VARCHAR(255) not null,
+    Foreign key (Jogador) references Jogador (id)
 );
 
-INSERT INTO Jogador (ID, Nome, Acertos, Tempo_Gasto) VALUES
-(default, 300000, 'Lucas', '15', '40s'),
-(default, 20000, 'Luiz', '21', '30s'),
-(default, 200000, 'Thiago', '20', '20s');
+-- primeiro insert.
+INSERT INTO Jogador(nome, pontos) VALUES
+("Jogador1", 10),
+("Jogador2", 20),
+("Jogador3", 30);
 
-INSERT INTO Informacoes (ID, Comida, Cor, Lugar) VALUES
-(default, 'BANANA', 'AZUL', 'BRASIL'),
-(default, 'MACARAO', 'VERMELHO', 'MEXICO'),
-(default, 'ARROZ', 'ROXO', 'MINAS'),
-(default, 'LIMAO', 'LARANJA', 'GOIAS');
+-- segundo insert.
+INSERT INTO Dados values 
+(default, 1, 'BANANA', 'Azul', 'Brasil'), 
+(default, 2, 'MACARRAO', 'VERMELHO', 'EUA'), 
+(default, 3, 'DANONE', 'ROXO', 'FRANCA');
+
+ select * from Dados;
