@@ -15,7 +15,7 @@ pontos longtext not null
 CREATE TABLE Dados(
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     Jogador int not null,
-    Comida longtext not null,
+    Comida VARCHAR(255) not null,
     Cor VARCHAR(255) not null,
     Lugar VARCHAR(255) not null,
     Foreign key (Jogador) references Jogador (id)
