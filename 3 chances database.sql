@@ -29,7 +29,7 @@ INSERT INTO Jogador(nome, pontos) VALUES
 
 -- segundo insert.
 INSERT INTO Dados values 
-(default, 1, 'BANANA', 'Azul', 'Brasil'), 
+(default, 1, 'BANANA', 'AZUL', 'BRASIL'), 
 (default, 2, 'MACARRAO', 'VERMELHO', 'EUA'), 
 (default, 3, 'DANONE', 'ROXO', 'FRANCA');
 
